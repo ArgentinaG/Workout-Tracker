@@ -1,9 +1,9 @@
 //db
-const db = require('../models')
+const db = require("../models ")
 module.exports = (app) => {
 
-    //Workout Routes//
-    //get all
+    //   Workout Routes   //
+
     app.get("/api/workouts", (req, res) => {
         db.Workout.find({}, (err, workouts) => {
             if (err) {
@@ -23,11 +23,10 @@ module.exports = (app) => {
             })
     });
     //create new workout
-    app.post('/api/workouts', (req, res) => {
+    app.post("/api/workouts", (req, res) => {
         db.Workout.create({}).then(newWorkout => {
             res.json(newWorkout);
         });
     });
 
 }
-© 2020 GitHub, Inc.
