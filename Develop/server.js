@@ -7,10 +7,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
 
-// Connect to the Mongo DB
-mongoose.connect(MONGODB_URI);
+    {
+        useNewUrlParser: true,
+        useFindAndModify: false
+    });
 
 app.use(logger("dev"));
 

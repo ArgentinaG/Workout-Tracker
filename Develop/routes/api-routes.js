@@ -1,8 +1,8 @@
-//db
-const db = require("../models ")
+
+const db = require("../models")
 module.exports = (app) => {
 
-    //   Workout Routes   //
+
 
     app.get("/api/workouts", (req, res) => {
         db.Workout.find({}, (err, workouts) => {
