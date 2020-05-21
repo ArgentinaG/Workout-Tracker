@@ -22,9 +22,10 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //routes
-app.use(require("./routes/api-routes"));
-app.use(require("./routes/html-routes"));
-
+// app.use(require("./routes/api-routes"));
+// app.use(require("./routes/html-routes"));
+require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}..`);
